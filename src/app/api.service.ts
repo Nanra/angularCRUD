@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class APIService {
 
   // Deklarasi variabel API
   API_URL  =  'http://localhost:8000';

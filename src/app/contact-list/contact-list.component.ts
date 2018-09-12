@@ -1,3 +1,4 @@
+import { APIService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
+  // Variable array contacts
+  private  contacts:  Array<object> = [];
 
-  constructor() { }
+  constructor( private apiService: APIService) { }
 
   ngOnInit() {
+
+  }
+
+  // Method to get data from contact service
+  public getContacts () {
+    this.apiService.getContacts().subscribe((data: Array<object>) => {
+      this.contacts = data;
+      console.log(data);
+
+    });
+
   }
 
 }
