@@ -13,7 +13,11 @@ export class APIService {
 
   // Method get data contact
   getContacts() {
-    return  this.httpClient.get(`${this.API_URL}/contacts`);
+    return  this.httpClient.get(`http://localhost:8000/contacts`);
+}
+
+createContact(contact) {
+  return  this.httpClient.post('http://localhost:8000/contacts', contact);
 }
 
 }
